@@ -3473,7 +3473,7 @@
     <div>
       <div class="eyebrow tt-eyebrow"><span class="dot"></span>SEO TÉCNICO · SOLO JUEVES</div>
       <h2 id="tt-title">Tareas técnicas por semana</h2>
-      <p>Lo que hay que terminar cada jueves para que las optimizaciones del calendario den resultado. Cada tarea sale de un dato de Search Console, GA4, Business Profile o de la auditoría (corte: 11/11/2026; actualizado con T-01, T-02 y T-16 el 12/11).</p>
+      <p>Lo que hay que terminar cada jueves para que las optimizaciones del calendario den resultado. Cada tarea sale de un dato de Search Console, GA4, Business Profile o de la auditoría (corte: 11/11/2026; actualizado con los informes de los agentes del 12/11).</p>
     </div>
     <div class="tt-progress"><b id="tt-done">0</b><span>de 16<br>tareas hechas</span></div>
   </div>
@@ -3534,13 +3534,13 @@
 </li><li class="tt-task" data-tt="T-12">
   <label class="tt-check"><input type="checkbox" data-tt-id="T-12" aria-label="Marcar T-12 como hecha"><span></span></label>
   <div class="tt-body">
-    <div class="tt-head"><span class="tt-id">T-12</span><span class="tt-prio tt-p0">P0 · Urgente</span><h4>Enviar el sitemap de Yoast en Search Console</h4></div>
+    <div class="tt-head"><span class="tt-id">T-12</span><span class="tt-prio tt-p0">P0 · Urgente</span><span class="tt-badge">Hecho</span><h4>Enviar el sitemap de Yoast en Search Console</h4></div>
     <details><summary>Ver detalle</summary>
       <dl>
         <dt>Por qué (dato)</dt><dd>Resultado de T-01: la propiedad https://cleancityexpress.com.mx/ tiene 0 sitemaps enviados y Google no conocía 4 landings que sí están en los XML públicos.</dd>
         <dt>Cómo</dt><dd>GSC › Sitemaps › enviar sitemap_index.xml. Revisar que lo lea como «Correcto» y cuántas URLs descubre. Comprobar también si existe una propiedad de dominio (sc-domain:) con sitemaps enviados allí, para no duplicar.</dd>
         <dt>Criterio de hecho</dt><dd>Sitemap con estado «Correcto» y URLs descubiertas mayor que 0.</dd>
-        <dt>Dependencia</dt><dd>Ninguna. Son 5 minutos.</dd>
+        <dt>Dependencia</dt><dd>Ninguna. Son 5 minutos.</dd><dt>Resultado</dt><dd>Hecho 12/11. Solo existe la propiedad https sin www. Se envió sitemap_index.xml: los 3 XML están en estado «Correcto» (páginas 13, entradas 11, categorías 3 = 27 URLs). El total del índice aún muestra 0 (es habitual que tarde en actualizarse). Las 4 landings están en page-sitemap.xml y /gracias-cotizacion/ no aparece en ningún XML (cierra CRO-007 / T-07).</dd>
       </dl>
     </details>
   </div>
@@ -3551,7 +3551,7 @@
     <details><summary>Ver detalle</summary>
       <dl>
         <dt>Por qué (dato)</dt><dd>Google no había descubierto /roedores/, /servicios/, /termitas/ ni /aranas/. El artículo de precios y la Home son las páginas con más rastreo e impresiones.</dd>
-        <dt>Cómo</dt><dd>Comprobar en el código fuente (sin JavaScript) que el menú las enlaza. Añadir enlaces en el texto: Home → /servicios/ («servicios de fumigación en CDMX»); artículo de precios → /roedores/ y /termitas/ en la sección por plaga; artículo de ratas → /roedores/. Sustituye y adelanta los enlaces previstos en las fichas del 19 y el 26.</dd>
+        <dt>Cómo</dt><dd>Ya comprobado (T-12): la Home enlaza en el HTML /roedores/, /termitas/ y /aranas/ (cabecera, menú móvil, footer y cuerpo) y /servicios/ una vez. Falta añadir enlaces en el texto: Home → /servicios/ («servicios de fumigación en CDMX»); artículo de precios → /roedores/ y /termitas/ en la sección por plaga; artículo de ratas → /roedores/. Sustituye y adelanta los enlaces previstos en las fichas del 19 y el 26.</dd>
         <dt>Criterio de hecho</dt><dd>Cada una de las 4 URLs recibe al menos 1 enlace en el texto de una página indexada con impresiones.</dd>
         <dt>Dependencia</dt><dd>T-12.</dd>
       </dl>
@@ -3606,7 +3606,7 @@
     <details><summary>Ver detalle</summary>
       <dl>
         <dt>Por qué (dato)</dt><dd>Una solicitud de indexación aceptada no garantiza la indexación (T-01, 12/11).</dd>
-        <dt>Cómo</dt><dd>Inspección de URLs en GSC de las 4. Si siguen como desconocidas con el sitemap leído y los enlaces puestos, revisar si hay contenido duplicado entre landings o un problema de rastreo del servidor.</dd>
+        <dt>Cómo</dt><dd>1) Inspección de URLs de las 4. 2) Informe Indexación de páginas filtrado por page-sitemap.xml: estado de cada URL. 3) Ajustes › Estadísticas de rastreo: frecuencia de rastreo y errores del servidor. 4) Búsqueda site:cleancityexpress.com.mx roedores (y las otras), por si Google tiene otra variante de la URL. Lo raro: /chinches/ está indexada con los mismos enlaces y las otras 4 no, así que el enlace del menú no explica la diferencia.</dd>
         <dt>Criterio de hecho</dt><dd>Estado actualizado de las 4 URLs en el log.</dd>
         <dt>Dependencia</dt><dd>T-12 y T-13.</dd>
       </dl>
@@ -3628,13 +3628,13 @@
 </li><li class="tt-task" data-tt="T-07">
   <label class="tt-check"><input type="checkbox" data-tt-id="T-07" aria-label="Marcar T-07 como hecha"><span></span></label>
   <div class="tt-body">
-    <div class="tt-head"><span class="tt-id">T-07</span><span class="tt-prio tt-p2">P2 · Menor</span><h4>CRO-007: comprobar que /gracias-cotizacion/ no está en el sitemap</h4></div>
+    <div class="tt-head"><span class="tt-id">T-07</span><span class="tt-prio tt-p2">P2 · Menor</span><span class="tt-badge">Hecho</span><h4>CRO-007: comprobar que /gracias-cotizacion/ no está en el sitemap</h4></div>
     <details><summary>Ver detalle</summary>
       <dl>
         <dt>Por qué (dato)</dt><dd>Es lo único que mantiene abierta CRO-007; la página es noindex.</dd>
         <dt>Cómo</dt><dd>Abrir page-sitemap.xml desde Yoast o el hosting (o en GSC › Sitemaps) y buscar la URL. Si aparece, excluirla en Yoast.</dd>
         <dt>Criterio de hecho</dt><dd>Evidencia (captura) de que no está en el sitemap. CRO-007 cerrada.</dd>
-        <dt>Dependencia</dt><dd>Ninguna.</dd>
+        <dt>Dependencia</dt><dd>Ninguna.</dd><dt>Resultado</dt><dd>Hecho 12/11 en T-12: /gracias-cotizacion/ no aparece en ninguno de los 3 XML de Yoast. CRO-007 puede cerrarse en la auditoría.</dd>
       </dl>
     </details>
   </div>
