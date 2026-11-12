@@ -3066,6 +3066,7 @@
 .tt-p0{color:#ffb3c0;border-color:rgba(255,179,192,.3);background:rgba(255,179,192,.06)}
 .tt-p1{color:var(--lime);border-color:rgba(215,255,63,.25);background:rgba(215,255,63,.05)}
 .tt-p2{color:#b9cbd4}
+.tt-badge{font-size:10px;font-weight:700;border-radius:6px;padding:2px 6px;color:var(--bg);background:var(--cyan)}
 .tt-body details{margin-top:7px}
 .tt-body summary{cursor:pointer;font-size:11px;font-weight:700;color:var(--muted);list-style:none}
 .tt-body summary::-webkit-details-marker{display:none}
@@ -3471,22 +3472,22 @@
     <div>
       <div class="eyebrow tt-eyebrow"><span class="dot"></span>SEO TÉCNICO · SOLO JUEVES</div>
       <h2 id="tt-title">Tareas técnicas por semana</h2>
-      <p>Lo que hay que terminar cada jueves para que las optimizaciones del calendario den resultado. Cada tarea sale de un dato de Search Console, GA4, Business Profile o de la auditoría (corte: 11/11/2026).</p>
+      <p>Lo que hay que terminar cada jueves para que las optimizaciones del calendario den resultado. Cada tarea sale de un dato de Search Console, GA4, Business Profile o de la auditoría (corte: 11/11/2026; actualizado con T-01 el 12/11).</p>
     </div>
-    <div class="tt-progress"><b id="tt-done">0</b><span>de 11<br>tareas hechas</span></div>
+    <div class="tt-progress"><b id="tt-done">0</b><span>de 14<br>tareas hechas</span></div>
   </div>
   <div class="tt-grid"><article class="tt-week">
-  <header class="tt-week-head"><div><span class="tt-date">Jueves 12 nov</span><b>Medir bien y ver qué páginas existen para Google</b></div><span class="tt-count" data-tt-week="2026-11-12">0/3</span></header>
+  <header class="tt-week-head"><div><span class="tt-date">Jueves 12 nov</span><b>Medir bien y ver qué páginas existen para Google</b></div><span class="tt-count" data-tt-week="2026-11-12">0/5</span></header>
   <ol class="tt-list" data-tt-week-list="2026-11-12"><li class="tt-task" data-tt="T-01">
   <label class="tt-check"><input type="checkbox" data-tt-id="T-01" aria-label="Marcar T-01 como hecha"><span></span></label>
   <div class="tt-body">
-    <div class="tt-head"><span class="tt-id">T-01</span><span class="tt-prio tt-p0">P0 · Urgente</span><h4>Revisar la indexación de las landings sin impresiones</h4></div>
+    <div class="tt-head"><span class="tt-id">T-01</span><span class="tt-prio tt-p0">P0 · Urgente</span><span class="tt-badge">Hecho 12/11</span><h4>Revisar la indexación de las landings sin impresiones</h4></div>
     <details><summary>Ver detalle</summary>
       <dl>
         <dt>Por qué (dato)</dt><dd>En Search Console, del 01/09 al 11/11, /roedores/, /termitas/, /aranas/ y /servicios/ no tienen ninguna impresión, y /chinches/ solo 1. Además /control-plagas-restaurantes-cdmx/ es nueva (1 impr.). Sin indexación no sirve optimizarlas.</dd>
         <dt>Cómo</dt><dd>Inspección de URL en GSC para cada una. Si sale «Descubierta/rastreada: sin indexar», revisar canonical, noindex, presencia en page-sitemap.xml y enlaces internos. Pedir indexación cuando esté correcta.</dd>
         <dt>Criterio de hecho</dt><dd>Estado de cada URL anotado en el log (indexada / causa encontrada). Indexación pedida donde corresponda.</dd>
-        <dt>Dependencia</dt><dd>Bloquea las fichas de ratas (19/11) y /servicios/ (26/11).</dd>
+        <dt>Dependencia</dt><dd>Bloquea las fichas de ratas (19/11) y /servicios/ (26/11).</dd><dt>Resultado</dt><dd>Hecho 12/11. Indexadas: /chinches/, /cucarachas/, /control-plagas-restaurantes-cdmx/ y /limpieza-colchones-a-domicilio-cdmx/. Google NO conocía /roedores/, /servicios/, /termitas/ ni /aranas/: indexación solicitada y aceptada (no confirmada). Las 8 responden 200, index, canonical propio y están en los XML de Yoast, pero la propiedad de GSC tiene 0 sitemaps enviados.</dd>
       </dl>
     </details>
   </div>
@@ -3516,9 +3517,35 @@
       </dl>
     </details>
   </div>
+</li><li class="tt-task" data-tt="T-12">
+  <label class="tt-check"><input type="checkbox" data-tt-id="T-12" aria-label="Marcar T-12 como hecha"><span></span></label>
+  <div class="tt-body">
+    <div class="tt-head"><span class="tt-id">T-12</span><span class="tt-prio tt-p0">P0 · Urgente</span><h4>Enviar el sitemap de Yoast en Search Console</h4></div>
+    <details><summary>Ver detalle</summary>
+      <dl>
+        <dt>Por qué (dato)</dt><dd>Resultado de T-01: la propiedad https://cleancityexpress.com.mx/ tiene 0 sitemaps enviados y Google no conocía 4 landings que sí están en los XML públicos.</dd>
+        <dt>Cómo</dt><dd>GSC › Sitemaps › enviar sitemap_index.xml. Revisar que lo lea como «Correcto» y cuántas URLs descubre. Comprobar también si existe una propiedad de dominio (sc-domain:) con sitemaps enviados allí, para no duplicar.</dd>
+        <dt>Criterio de hecho</dt><dd>Sitemap con estado «Correcto» y URLs descubiertas mayor que 0.</dd>
+        <dt>Dependencia</dt><dd>Ninguna. Son 5 minutos.</dd>
+      </dl>
+    </details>
+  </div>
+</li><li class="tt-task" data-tt="T-13">
+  <label class="tt-check"><input type="checkbox" data-tt-id="T-13" aria-label="Marcar T-13 como hecha"><span></span></label>
+  <div class="tt-body">
+    <div class="tt-head"><span class="tt-id">T-13</span><span class="tt-prio tt-p1">P1 · Importante</span><h4>Enlazar las 4 landings desconocidas desde páginas que ya rinden</h4></div>
+    <details><summary>Ver detalle</summary>
+      <dl>
+        <dt>Por qué (dato)</dt><dd>Google no había descubierto /roedores/, /servicios/, /termitas/ ni /aranas/. El artículo de precios y la Home son las páginas con más rastreo e impresiones.</dd>
+        <dt>Cómo</dt><dd>Comprobar en el código fuente (sin JavaScript) que el menú las enlaza. Añadir enlaces en el texto: Home → /servicios/ («servicios de fumigación en CDMX»); artículo de precios → /roedores/ y /termitas/ en la sección por plaga; artículo de ratas → /roedores/. Sustituye y adelanta los enlaces previstos en las fichas del 19 y el 26.</dd>
+        <dt>Criterio de hecho</dt><dd>Cada una de las 4 URLs recibe al menos 1 enlace en el texto de una página indexada con impresiones.</dd>
+        <dt>Dependencia</dt><dd>T-12.</dd>
+      </dl>
+    </details>
+  </div>
 </li></ol>
 </article><article class="tt-week">
-  <header class="tt-week-head"><div><span class="tt-date">Jueves 19 nov</span><b>Limpiar URLs y quitar fricción móvil</b></div><span class="tt-count" data-tt-week="2026-11-19">0/4</span></header>
+  <header class="tt-week-head"><div><span class="tt-date">Jueves 19 nov</span><b>Limpiar URLs y quitar fricción móvil</b></div><span class="tt-count" data-tt-week="2026-11-19">0/5</span></header>
   <ol class="tt-list" data-tt-week-list="2026-11-19"><li class="tt-task" data-tt="T-04">
   <label class="tt-check"><input type="checkbox" data-tt-id="T-04" aria-label="Marcar T-04 como hecha"><span></span></label>
   <div class="tt-body">
@@ -3555,6 +3582,19 @@
         <dt>Cómo</dt><dd>Ajustar la posición o el margen inferior del botón flotante o de la barra de llamada. Revisar a 360 y 390 px en Home, Cucarachas, Chinches, Roedores y Contacto.</dd>
         <dt>Criterio de hecho</dt><dd>Ambos botones visibles y pulsables en móvil, sin solaparse. Eventos clic_whatsapp y clic_telefono siguen disparando.</dd>
         <dt>Dependencia</dt><dd>Ninguna.</dd>
+      </dl>
+    </details>
+  </div>
+</li><li class="tt-task" data-tt="T-14">
+  <label class="tt-check"><input type="checkbox" data-tt-id="T-14" aria-label="Marcar T-14 como hecha"><span></span></label>
+  <div class="tt-body">
+    <div class="tt-head"><span class="tt-id">T-14</span><span class="tt-prio tt-p0">P0 · Urgente</span><h4>Volver a inspeccionar /roedores/, /servicios/, /termitas/ y /aranas/</h4></div>
+    <details><summary>Ver detalle</summary>
+      <dl>
+        <dt>Por qué (dato)</dt><dd>Una solicitud de indexación aceptada no garantiza la indexación (T-01, 12/11).</dd>
+        <dt>Cómo</dt><dd>Inspección de URLs en GSC de las 4. Si siguen como desconocidas con el sitemap leído y los enlaces puestos, revisar si hay contenido duplicado entre landings o un problema de rastreo del servidor.</dd>
+        <dt>Criterio de hecho</dt><dd>Estado actualizado de las 4 URLs en el log.</dd>
+        <dt>Dependencia</dt><dd>T-12 y T-13.</dd>
       </dl>
     </details>
   </div>
@@ -4192,7 +4232,7 @@
         "ratas en negocio"
       ],
       "hook": "Darle a Google una página comercial clara para ratas",
-      "caption": "ANTES: revisar el resultado de T-01 (indexación de /roedores/).\n\nEN EL ARTÍCULO DE RATAS:\n1. Title/H1 con «Fumigación de ratas en CDMX». Meta description con «casa, negocio y bodega» + «cotiza por WhatsApp».\n2. En los 2 primeros párrafos, enlace con el ancla «control de roedores en CDMX» → /roedores/.\n3. Sección «¿Cuánto cuesta controlar ratas?» de 3 líneas con enlace a la sección de plagas del artículo de precios (ver ficha del 12/11).\n4. FAQ breve: «¿Ratas o ratones? Cómo distinguir las señales» y «¿Qué hacer antes de la visita?». Solo información general, sin promesas.\n\nEN /roedores/:\n5. Enlace a la guía con el ancla «señales de ratas en casa y negocio».\n6. Confirmar que title/H1 apuntan a «control de roedores / fumigación de ratas en CDMX» y que el CTA de WhatsApp tiene mensaje de roedores.\n\nSI /roedores/ NO SE PUEDE INDEXAR: dejar el artículo como página principal y anotarlo.",
+      "caption": "ANTES: T-01 (12/11) confirmó que Google no conocía /roedores/; se pidió la indexación. Inspeccionarla de nuevo: si ya está indexada, seguir el plan.\n\nEN EL ARTÍCULO DE RATAS:\n1. Title/H1 con «Fumigación de ratas en CDMX». Meta description con «casa, negocio y bodega» + «cotiza por WhatsApp».\n2. En los 2 primeros párrafos, enlace con el ancla «control de roedores en CDMX» → /roedores/.\n3. Sección «¿Cuánto cuesta controlar ratas?» de 3 líneas con enlace a la sección de plagas del artículo de precios (ver ficha del 12/11).\n4. FAQ breve: «¿Ratas o ratones? Cómo distinguir las señales» y «¿Qué hacer antes de la visita?». Solo información general, sin promesas.\n\nEN /roedores/:\n5. Enlace a la guía con el ancla «señales de ratas en casa y negocio».\n6. Confirmar que title/H1 apuntan a «control de roedores / fumigación de ratas en CDMX» y que el CTA de WhatsApp tiene mensaje de roedores.\n\nSI /roedores/ NO SE PUEDE INDEXAR: dejar el artículo como página principal y anotarlo.",
       "cta": "Cotizar por WhatsApp",
       "url": "https://cleancityexpress.com.mx/fumigacion-y-control-de-ratas-en-cdmx-como-proteger-casa-negocio-y-bodega/",
       "imageDirection": "Infografía «Señales de roedores» con 4 iconos (excremento, roeduras, ruidos, huellas).",
@@ -4283,7 +4323,7 @@
         "fumigación residencial"
       ],
       "hook": "Una página ganadora para la búsqueda comercial principal",
-      "caption": "ANTES: revisar el resultado de T-05 (adónde redirige la guía antigua) y de T-01 (indexación de /servicios/).\n\nQUÉ HACER EN /servicios/:\n1. Title: «Servicio de fumigación y control de plagas en CDMX | Clean City». H1: «Servicio de fumigación en CDMX».\n2. Intro de 120–180 palabras: qué plagas se atienden, casas y negocios, cómo cotizar.\n3. Secciones cortas: «Fumigación residencial» (casas y departamentos), «Fumigación para negocios» (restaurantes, oficinas, locales → enlace a /control-plagas-restaurantes-cdmx/), «Cómo funciona el servicio», «Precios» (enlace al artículo de precios).\n4. Las 8 tarjetas de servicio, con anclas descriptivas («fumigación de cucarachas», «control de roedores»…).\n5. FAQ visible + FAQPage.\n6. En la Home: enlace con el ancla «servicios de fumigación en CDMX» → /servicios/.\n7. En el artículo /servicio-de-fumigacion-en-cdmx-que-incluye-y-como-preparar-tu-casa/: enfocarlo en «cómo preparar tu casa» y enlazar a /servicios/ para no competir.\n\nNO: mencionar zonas o alcaldías no confirmadas (solo CDMX).",
+      "caption": "ANTES: revisar T-05 (adónde redirige la guía antigua). T-01 (12/11) confirmó que Google no conocía /servicios/; se pidió la indexación y el sitemap se envía en T-12.\n\nQUÉ HACER EN /servicios/:\n1. Title: «Servicio de fumigación y control de plagas en CDMX | Clean City». H1: «Servicio de fumigación en CDMX».\n2. Intro de 120–180 palabras: qué plagas se atienden, casas y negocios, cómo cotizar.\n3. Secciones cortas: «Fumigación residencial» (casas y departamentos), «Fumigación para negocios» (restaurantes, oficinas, locales → enlace a /control-plagas-restaurantes-cdmx/), «Cómo funciona el servicio», «Precios» (enlace al artículo de precios).\n4. Las 8 tarjetas de servicio, con anclas descriptivas («fumigación de cucarachas», «control de roedores»…).\n5. FAQ visible + FAQPage.\n6. En la Home: enlace con el ancla «servicios de fumigación en CDMX» → /servicios/.\n7. En el artículo /servicio-de-fumigacion-en-cdmx-que-incluye-y-como-preparar-tu-casa/: enfocarlo en «cómo preparar tu casa» y enlazar a /servicios/ para no competir.\n\nNO: mencionar zonas o alcaldías no confirmadas (solo CDMX).",
       "cta": "Cotizar por WhatsApp",
       "url": "https://cleancityexpress.com.mx/servicios/",
       "imageDirection": "Mapa visual de servicios: 8 plagas + limpieza en una cuadrícula.",
