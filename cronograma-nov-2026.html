@@ -3473,12 +3473,12 @@
     <div>
       <div class="eyebrow tt-eyebrow"><span class="dot"></span>SEO TÉCNICO · SOLO JUEVES</div>
       <h2 id="tt-title">Tareas técnicas por semana</h2>
-      <p>Lo que hay que terminar cada jueves para que las optimizaciones del calendario den resultado. Cada tarea sale de un dato de Search Console, GA4, Business Profile o de la auditoría (corte: 11/11/2026; actualizado con T-01 y T-02 el 12/11).</p>
+      <p>Lo que hay que terminar cada jueves para que las optimizaciones del calendario den resultado. Cada tarea sale de un dato de Search Console, GA4, Business Profile o de la auditoría (corte: 11/11/2026; actualizado con T-01, T-02 y T-16 el 12/11).</p>
     </div>
-    <div class="tt-progress"><b id="tt-done">0</b><span>de 15<br>tareas hechas</span></div>
+    <div class="tt-progress"><b id="tt-done">0</b><span>de 16<br>tareas hechas</span></div>
   </div>
   <div class="tt-grid"><article class="tt-week">
-  <header class="tt-week-head"><div><span class="tt-date">Jueves 12 nov</span><b>Medir bien y ver qué páginas existen para Google</b></div><span class="tt-count" data-tt-week="2026-11-12">0/5</span></header>
+  <header class="tt-week-head"><div><span class="tt-date">Jueves 12 nov</span><b>Medir bien y ver qué páginas existen para Google</b></div><span class="tt-count" data-tt-week="2026-11-12">0/6</span></header>
   <ol class="tt-list" data-tt-week-list="2026-11-12"><li class="tt-task" data-tt="T-01">
   <label class="tt-check"><input type="checkbox" data-tt-id="T-01" aria-label="Marcar T-01 como hecha"><span></span></label>
   <div class="tt-body">
@@ -3515,6 +3515,19 @@
         <dt>Cómo</dt><dd>Pedir a Omar que revise contacto@cleancityexpress.com.mx y Elementor › Envíos. Crear una hoja simple: fecha, canal, servicio, ¿cotizó?, ¿contrató?</dd>
         <dt>Criterio de hecho</dt><dd>Lista de envíos sep–nov cruzada con GA4. Hoja de seguimiento creada.</dd>
         <dt>Dependencia</dt><dd>Depende de Omar.</dd>
+      </dl>
+    </details>
+  </div>
+</li><li class="tt-task" data-tt="T-16">
+  <label class="tt-check"><input type="checkbox" data-tt-id="T-16" aria-label="Marcar T-16 como hecha"><span></span></label>
+  <div class="tt-body">
+    <div class="tt-head"><span class="tt-id">T-16</span><span class="tt-prio tt-p1">P1 · Importante</span><span class="tt-badge">Hecho</span><h4>GA4: clics de contacto como eventos clave + dimensiones de servicio</h4></div>
+    <details><summary>Ver detalle</summary>
+      <dl>
+        <dt>Por qué (dato)</dt><dd>Solo generate_lead era evento clave, y en México mucha gente cotiza por WhatsApp. Sin marcar los clics, GA4 no atribuye los contactos por fuente ni por página.</dd>
+        <dt>Cómo</dt><dd>Marcar clic_whatsapp, clic_telefono y clic_correo como eventos clave, contados una vez por sesión. Registrar los parámetros de servicio y posición del botón como dimensiones personalizadas.</dd>
+        <dt>Criterio de hecho</dt><dd>3 eventos clave con recuento por sesión; dimensiones creadas con el nombre exacto del parámetro.</dd>
+        <dt>Dependencia</dt><dd>Ninguna.</dd><dt>Resultado</dt><dd>Hecho 12/11. Son eventos clave clic_whatsapp, clic_telefono y clic_correo (una vez por sesión); generate_lead sigue igual (una vez por evento). Dimensiones creadas: «Servicio del CTA» → service y «Posición del CTA» → cta_location (alcance Evento). Cuentan desde el 12/11, no son retroactivas. Pendiente ver datos reales de teléfono y correo.</dd>
       </dl>
     </details>
   </div>
@@ -3606,7 +3619,7 @@
     <details><summary>Ver detalle</summary>
       <dl>
         <dt>Por qué (dato)</dt><dd>Seguimiento de T-02. Los filtros en Probando solo marcan los datos; al activarlos se excluyen para siempre. Las pruebas de QA de octubre llevaban UTM y no debug_mode, así que el filtro de desarrolladores solo las habría excluido si se hubieran hecho en modo depuración.</dd>
-        <dt>Cómo</dt><dd>En la exploración, pestaña de validación, con la dimensión «Nombre del filtro de datos de prueba»: comprobar qué eventos marca cada filtro desde el 12/11. Norma desde hoy: toda prueba se hace con Tag Assistant o DebugView, nunca con UTM en producción. Añadir la regla de IP solo si hay una IP fija del equipo (las de los agentes cambian).</dd>
+        <dt>Cómo</dt><dd>En la exploración, pestaña de validación, con la dimensión «Nombre del filtro de datos de prueba»: comprobar qué eventos marca cada filtro desde el 12/11. Norma desde hoy: toda prueba se hace con Tag Assistant o DebugView, nunca con UTM en producción. Añadir la regla de IP solo si hay una IP fija del equipo (las de los agentes cambian). Comprobar también que «Servicio del CTA» y «Posición del CTA» (T-16) ya reciben valores en los clics reales.</dd>
         <dt>Criterio de hecho</dt><dd>Decisión de Emmanuel registrada: activar o mantener en prueba. Norma de pruebas comunicada al equipo y a los agentes.</dd>
         <dt>Dependencia</dt><dd>Datos posteriores al 12/11.</dd>
       </dl>
